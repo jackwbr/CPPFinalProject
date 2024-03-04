@@ -2,12 +2,12 @@
 
 using namespace std;
 
-string arrayprint(){
+string arrayprint(){ //prints the array                                     //the point of this method is to 
     string map[10][10] = {
                     {"_","_","_","_","_","_","_","_","_","_"},
                     {"_","_","_","_","_","_","_","_","_","_"},
                     {"_","_","_","_","_","_","_","_","_","_"},
-                    {"_","_","_","_","_","_","_","_","_","_"},
+                    {"_","_","_","_","_","_","_","_","_","_"},  //defines the game game
                     {"_","_","_","_","_","_","_","_","_","_"},
                     {"_","_","_","_","_","_","_","_","_","_"},
                     {"_","_","_","_","_","_","_","_","_","_"},
@@ -18,7 +18,7 @@ string arrayprint(){
 
     int i = 0;
     int j = 0;                                                                            //WHAT TO DO:
-    while(i < 10){                                                                                  // 1. Incorporate movement into arrayprint,                                                                                  // 2. Create a player character
+    while(i < 10){                                                                                  // 1. Incorporate movement into ar  rayprint,                                                                                  // 2. Create a player character
         while(j < 10){                                                                              // Uuse a parameter for this. MUST PASS DATA BETWEEN METHODS
             cout << map[i][j];
             j++;
