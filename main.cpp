@@ -1,57 +1,51 @@
 #include<iostream>
+#include<cstdlib>
+#include<unistd.h>
 
 using namespace std;
 
-string arrayprint(){ //prints the array                                     //the point of this method is to 
-    string map[10][10] = {
-                    {"_","_","_","_","_","_","_","_","_","_"},
-                    {"_","_","_","_","_","_","_","_","_","_"},
-                    {"_","_","_","_","_","_","_","_","_","_"},
-                    {"_","_","_","_","_","_","_","_","_","_"},  //defines the game game
-                    {"_","_","_","_","_","_","_","_","_","_"},
-                    {"_","_","_","_","_","_","_","_","_","_"},
-                    {"_","_","_","_","_","_","_","_","_","_"},
-                    {"_","_","_","_","_","_","_","_","_","_"},
-                    {"_","_","_","_","_","_","_","_","_","_"},
-                    {"_","_","_","_","_","_","_","_","_","_"}
-                        };
+void printarray(){
+    string mainarray[10][11] = {
+                    {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"},
+                    {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"},
+                    {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"},
+                    {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"},
+                    {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"},
+                    {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"},
+                    {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"},
+                    {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"}, 
+                    {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"},
+                    {"_", "_", "_", "_", "_", "*", "_", "_", "_", "_", "_"}         //10, 5 is the position of the player
+                            };  
 
-    int i = 0;
-    int j = 0;                                                                            //WHAT TO DO:
-    while(i < 10){                                                                                  // 1. Incorporate movement into ar  rayprint,                                                                                  // 2. Create a player character
-        while(j < 10){                                                                              // Uuse a parameter for this. MUST PASS DATA BETWEEN METHODS
-            cout << map[i][j];
+    int i = 0; 
+    int j = 0;
+
+    while(i<10){
+        while(j<11){
+            cout << mainarray[i][j];
             j++;
         }
         cout << endl;
+        j=0;
         i++;
     }
-
-
 }
 
+
+
 int main(){
-    string input1;
-    cout << "To exit, enter 'q'" << endl;
+    cout << "Welcome! Press Q to quit. " << endl; 
+    sleep(2);
+    char input;
+    
     while(true){
-        arrayprint();
-        cout << " " << endl;
-        cin >> input1;
-        if (input1 == "q"){
+        printarray();
+        cin >> input;
+        if (input = 'q'){
             exit;
         }
-
-        else if (input1 == "w"){
-            // move up
-        }
-        else if (input1 == "s"){
-            // move down
-        }
-        else if (input1 == "a"){
-            // move left
-        }
-        else if (input1 == "d"){
-            // move right
-        }
     }
+
+    return 0;
 }
