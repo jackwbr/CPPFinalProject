@@ -35,7 +35,7 @@ void printarray(){
 
 
 int main(){
-    cout << "Welcome! Press Q to quit. " << endl; 
+    cout << "Welcome! You will have to spam enter to change frames, sorry. Press Q to quit. " << endl; 
     sleep(2);
     char input;
     
@@ -43,7 +43,7 @@ int main(){
         printarray();
         cin >> input;
         if (input = 'q'){
-            exit;
+            exit();
         }
     }
 
