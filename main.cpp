@@ -1,51 +1,62 @@
 #include<iostream>
-#include<cstdlib>
-#include<unistd.h>
 
 using namespace std;
 
-void printarray(){
-    string mainarray[10][11] = {
-                    {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"},
-                    {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"},
-                    {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"},
-                    {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"},
-                    {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"},
-                    {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"},
-                    {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"},
-                    {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"}, 
-                    {"_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"},
-                    {"_", "_", "_", "_", "_", "*", "_", "_", "_", "_", "_"}         //10, 5 is the position of the player
-                            };  
+string encrypt(string message){     //encrypts the message
+    char letter_to_number[2][2] = {
+        {'a', '1'},
+        {'b', '2'},
+        {'c', '3'},
+        {'d', '4'},
+        {'e', '5'},
+        {'f', '6'},
+        {'g', '7'},
+        {'h', '8'},
+        {'i', '9'},
+        {'j', '10'},
+        {'k', '11'},
+        {'l', '12'},
+        {'m', '13'},
+        {'n', '14'},
+        {'o', '15'},
+        {'p', '16'},
+        {'q', '17'},
+        {'r', '18'},
+        {'s', '19'},
+        {'t', '20'},
+        {'u', '21'},
+        {'v', '22'},
+        {'w', '23'},
+        {'x', '24'},
+        {'y', '25'},
+        {'z', '26'}
+    };
+}
 
-    int i = 0; 
-    int j = 0;
-
-    while(i<10){
-        while(j<11){
-            cout << mainarray[i][j];
-            j++;
-        }
-        cout << endl;
-        j=0;
-        i++;
-    }
+string decrypt(string message){        //decrypts the message
+    //placeholder
 }
 
 
-
-int main(){
-    cout << "Welcome! You will have to spam enter to change frames, sorry. Press Q to quit. " << endl; 
-    sleep(2);
-    char input;
-    
-    while(true){
-        printarray();
-        cin >> input;
-        if (input = 'q'){
-            exit();
-        }
+int main(){                     //handles user interaction
+    string initial_option;
+    cout << "Encrypt or decrypt? ";
+    cin >> initial_option;
+    if (initial_option == "encrypt"){
+        string message;
+        cout << "Enter the message you want to encrypt: ";
+        cin >> message;
+        cout << "Encrypted version: " << encrypt(message) << endl;
     }
 
-    return 0;
+    else if (initial_option == "decrypt"){
+        string message;
+        cout << "Enter the key: ";
+        cin >> message;
+        cout << "Decrypted version: " << decrypt(message) << endl;
+    }
+
+    else{
+        cout << "Invalid option" << endl;
+    }
 }
