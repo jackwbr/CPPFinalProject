@@ -10,10 +10,10 @@ void encrypt(){
     int i = 0;
     while(i < to_encrypt.length()){
         if (to_encrypt[i] == 'a'){
-            encryptedint [i] = 1;
+            encryptedint [i] = 1;                                           //my god this is long. sorry future self 
         }
         else if (to_encrypt[i] == 'b'){
-            encryptedint[i] = 2;
+            encryptedint[i] = 2;      
         }
         else if (to_encrypt[i] == 'c'){
             encryptedint[i] = 3;
