@@ -6,7 +6,7 @@ void encrypt(){
     string to_encrypt;
     cout << "Enter the string to encrypt (no special characters or numbers, only letters): ";
     cin >> to_encrypt;
-    int encryptedint [to_encrypt.length()][2];
+    int encryptedint [to_encrypt.length()];
     int i = 0;
     while(i < to_encrypt.length()){
         if (to_encrypt[i] == 'a'){
@@ -87,10 +87,33 @@ void encrypt(){
         else if (to_encrypt[i] == 'z'){
            encryptedint[i] = 26;
         }
+        else if (to_encrypt[i] == ' '){
+           encryptedint[i] = 27;
+        }
         i++;
+        
+    }                                                               //might use this later. its just a test //actually just save this to copy and paste for later
+    // int abc = 0;              
+    // while(j < to_encrypt.length()){
+    //     cout << encryptedint[j] << " ";                  
+    //     abc++;                                          
+    // }
+    int j = 0;
+    while(j < to_encrypt.length()){
+        encryptedint[j] = encryptedint[j] * 5 - 3;                  //this is where the actual encryption happens. ?use a rng with a multiplier?
+        j++;
     }
-    cout << to_encrypt << endl;
+    //
+    int abc = 0;              
+    while(abc < to_encrypt.length()){
+        cout << encryptedint[abc] << " ";                  
+        abc++;                                          
+    }
+    //
 }
+
+
+
 
 void decrypt(){
     string to_decrypt;
