@@ -97,23 +97,23 @@ void encrypt(){
         i++;
         
     }                                                               //might use this later. its just a test //actually just save this to copy and paste for later
-    int abc = 0;              
-    while(j < to_encrypt.length()){
-        cout << encryptedint[j] << " ";                  
-        abc++;                                          
-    }
-    // int j = 0;
-    // while(j < to_encrypt.length()){
-    //     encryptedint[j] = encryptedint[j] * 5 - 3;                  //this is where the actual encryption happens. ?use a rng with a multiplier?
-    //     j++;
+    // int abc = 0;              
+    // while(abc < to_encrypt.length()){
+    //     cout << encryptedint[abc] << " ";                  
+    //     abc++;                                          
     // }
+    int j = 0;
+    while(j < to_encrypt.length()){
+        encryptedint[j] = encryptedint[j] * 5 - 3;                  //this is where the actual encryption happens. ?use a rng with a multiplier?
+        j++;
+    }
     //
     int abc = 0;              
     while(abc < to_encrypt.length()){
         cout << encryptedint[abc] << " ";                  
         abc++;                                          
     }
-    //
+    
 }
 
 
